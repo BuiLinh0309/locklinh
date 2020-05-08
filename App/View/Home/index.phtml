@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<?php
+include_once VIEW.DIRECTORY_SEPARATOR.'layout/header.phtml'?>
+<body>
+
+<?php
+if (isset($_SESSION['capnhat'])){
+   echo "<script>alert('Cập nhật thành công!') </script>";
+   unset($_SESSION['capnhat']);
+}
+if (isset($_SESSION['xoa'])){
+    echo "<script>alert('Xoa thành công!') </script>";
+    unset($_SESSION['xoa']);
+}
+?>
+<div class="container ">
+    <h1 STYLE="text-align: center; color: red" >QUẢN LÝ SÁCH</h1>
+    <h1 STYLE="text-align: center; color: mediumspringgreen" >Cao Anh Dũng - 34161</h1>
+<br>
+    <?php
+        require ('listbook.php');
+        ?>
+</div>
+
+</body>
+</html>
